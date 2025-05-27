@@ -1,0 +1,25 @@
+{/**
+ * @file mbed_app.json
+ * @author Krister Sørstrand
+ */
+    "target_overrides": {
+        "*": {
+            "target.printf_lib": "std",
+            "target.c_lib": "std",
+            "platform.stdio-baud-rate": 115200,
+            "platform.minimal-printf-enable-floating-point": true,
+            "platform.minimal-printf-set-floating-point-max-decimals": 6,
+            "platform.minimal-printf-enable-64-bit": false,
+            "nsapi.default-wifi-security": "WPA_WPA2",
+            "nsapi.default-wifi-ssid": "\"Krister\"",
+            "nsapi.default-wifi-password": "\"huskerikke\"",
+            "rtos.main-thread-stack-size": 8192
+        },
+        "DISCO_L475VG_IOT01A": {
+            "target.components_add": ["ism43362"],
+            "ism43362.provide-default": true,
+            "ism43362.wifi-debug": false,
+            "target.network-default-interface-type": "WIFI"
+        }
+    }
+}
